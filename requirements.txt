@@ -1,0 +1,28 @@
+# Core ML
+scikit-learn>=1.4
+xgboost>=2.0
+lightgbm>=4.0
+pandas>=2.0
+numpy>=1.26
+
+# Snowflake
+snowflake-connector-python>=3.6
+snowflake-ml-python>=1.4   # Snowflake Feature Store + Model Registry SDK
+
+# MLflow
+mlflow>=2.12
+
+# NLP / LLM
+anthropic>=0.25            # AI_COMPLETE / LLM talking points
+
+# Pipeline
+dagster>=1.6
+dagster-snowflake>=0.22
+
+# Explainability
+shap>=0.45
+
+# Dev / testing
+pytest>=8.0
+ruff>=0.4
+jupyter>=1.0

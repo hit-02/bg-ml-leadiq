@@ -1,0 +1,23 @@
+name: Model Deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      model_version:
+        description: 'Model version to deploy (e.g. leadiq-v1.0.0)'
+        required: true
+      environment:
+        description: 'Target environment'
+        required: true
+        default: 'staging'
+        type: choice
+        options: [staging, production]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy model to Snowflake Model Registry
+        run: echo "Deploy ${{ inputs.model_version }} to ${{ inputs.environment }}"
+        # TODO: add Snowflake CLI deploy step

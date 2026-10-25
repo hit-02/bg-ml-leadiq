@@ -1,0 +1,15 @@
+name: Feature Pipeline
+
+on:
+  schedule:
+    - cron: '0 * * * *'   # hourly, aligned with lead ingestion window
+  workflow_dispatch:
+
+jobs:
+  run-feature-pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Trigger Dagster feature pipeline
+        run: echo "Trigger Dagster job: leadiq_feature_refresh"
+        # TODO: add Dagster GraphQL trigger step
